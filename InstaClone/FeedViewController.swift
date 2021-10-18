@@ -28,11 +28,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.rowHeight = 500
         
         getDataFromFirestore()
-        
     }
 
     func getDataFromFirestore(){
-        
         let firestoreDatabase = Firestore.firestore()
 
         firestoreDatabase.collection("Posts").order(by: "date", descending: true).addSnapshotListener { (snapshot ,error) in

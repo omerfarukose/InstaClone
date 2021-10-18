@@ -24,5 +24,5 @@ class SettingsViewController: UIViewController {
             print("Error !")
         }
     }
-
+    
 }

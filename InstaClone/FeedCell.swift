@@ -23,16 +23,12 @@ class FeedCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
     @IBAction func likeButtonClicked(_ sender: Any) {
-        print("Like Button Clicked !1111111112312312312312312312321")
-        print("Document ID : \(documentIdLabel.text)")
         let firestoreDatabase = Firestore.firestore()
         if let likeCount = Int(likeLabel.text!) {
-            print("Like Count -------- \(likeCount + 1)")
             let likeStore = ["likes" : likeCount + 1] as [String : Any]
             firestoreDatabase.collection("Posts").document(documentIdLabel.text!).setData(likeStore ,merge: true)
             

@@ -15,14 +15,10 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         imageView.isUserInteractionEnabled = true
-        
         let imageGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-        
-        imageView.addGestureRecognizer(imageGestureRecognizer)
-        
+        imageView.addGestureRecognizer(imageGestureRecognizer)        
     }
     
     @objc func selectImage(){
