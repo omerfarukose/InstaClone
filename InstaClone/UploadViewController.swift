@@ -29,7 +29,6 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
-        picker.isEditing = true
         present(picker, animated: true, completion: nil)
     }
     
@@ -50,6 +49,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
             let imageReference = mediaFolder.child("\(uuid).jpg")
             
             imageReference.putData(data, metadata: nil) { storageMetadat, error in
+                
                 if error != nil {
                     self.makeAlert(title: "Error !", message: error?.localizedDescription ?? "Error !")
                 }else{
